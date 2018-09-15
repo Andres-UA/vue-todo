@@ -1,10 +1,12 @@
-<template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <br>
-    <TodoList />
-    
-  </div>
+<template>  
+    <div class="siimple-content siimple-content--small">
+        <center>
+        <img alt="Vue logo" src="./assets/logo.png">
+        </center>
+        <br>
+        <TodoList />
+
+    </div>
 </template>
 
 <script>
@@ -19,13 +21,15 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  width: 400px;
-  margin: 0% auto;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+    @import url('https://cdn.jsdelivr.net/npm/siimple@3.1.1/dist/siimple.min.css');
+    @import url('https://use.fontawesome.com/releases/v5.3.1/css/all.css');
+    #app {
+        font-family: "Avenir", Helvetica, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        
+        color: #2c3e50;
+        margin-top: 60px;
+    }
+
 </style>

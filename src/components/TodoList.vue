@@ -2,17 +2,22 @@
     <div>
         <TodoInput 
 			v-model="newTodo"
-			placeholder="New todo"
-			@keydown.enter="addTodo"
+			placeholder="Nueva tarea"
+			@keydown.enter="saveTodo"
 		/>
-        <ul v-if="todos.length">
-			<TodoItem
+
+        <br>
+        <br>
+
+        <div class="siimple-list " v-if="todos.length">
+			<TodoItem        
 				v-for="todo in todos"
 				:key="todo.id"
 				:todo="todo"
 				@remove="removeTodo"
+                @edit="editTodo"
 			/>
-		</ul>
+		</div>
 		<p v-else>
 			No hay tareas en la lista.
 		</p>
@@ -33,7 +38,8 @@ export default {
   },
   data() {
     return {
-      newTodo: "tarea",
+      newTodo: "",
+      idEdit: -1,
       todos: [
         {
           id: todoId++,
@@ -51,6 +57,20 @@ export default {
     };
   },
   methods: {
+    saveTodo() {
+      if (this.idToEdit === 0) {
+        this.addTodo();
+      } else {
+        const index = this.todos.findIndex(item => item.id == this.idEdit);
+
+        this.todos.splice(index, 1, {
+          id: this.idEdit,
+          text: this.newTodo
+        });
+        this.idEdit = 0;
+        this.newTodo = "";
+      }
+    },
     addTodo() {
       const trimmedText = this.newTodo.trim();
       if (trimmedText) {
@@ -60,6 +80,13 @@ export default {
         });
         this.newTodo = "";
       }
+    },
+    editTodo(idToEdit) {
+      let todo = this.todos.filter(todo => {
+        return todo.id === idToEdit;
+      });
+      this.newTodo = todo[0].text;
+      this.idEdit = todo[0].id;
     },
     removeTodo(idToRemove) {
       this.todos = this.todos.filter(todo => {

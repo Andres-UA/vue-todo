@@ -1,5 +1,5 @@
 <template>
-    <input type="text" :value="value" v-on="inputListeners">
+    <input type="text" :value="value" v-on="inputListeners" class="siimple-input" >
 </template>
 
 <script>
@@ -33,10 +33,10 @@ export default {
 
 
 <style scoped>
-input {
-  width: 100%;
-  padding: 10px 10px;
-  border: 1px solid #42b983;
-}
+    input {
+        width: 100%;
+        padding: 10px 10px;
+    }
+    
 </style>
 
