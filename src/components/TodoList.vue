@@ -39,7 +39,7 @@ export default {
   data() {
     return {
       newTodo: "",
-      idEdit: -1,
+      idEdit: 0,
       todos: [
         {
           id: todoId++,
@@ -48,17 +48,13 @@ export default {
         {
           id: todoId++,
           text: "Tarea 2"
-        },
-        {
-          id: todoId++,
-          text: "Tarea 3"
         }
       ]
     };
   },
   methods: {
     saveTodo() {
-      if (this.idToEdit === 0) {
+      if (this.idEdit === 0) {
         this.addTodo();
       } else {
         const index = this.todos.findIndex(item => item.id == this.idEdit);
