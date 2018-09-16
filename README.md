@@ -1,16 +1,16 @@
-# todo
+# ToDo
 
-## Project setup
+## Instalar
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Compilar para desarrollo
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Compilar para producción
 ```
 npm run build
 ```

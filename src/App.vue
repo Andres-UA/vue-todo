@@ -1,4 +1,5 @@
 <template>  
+<div> 
     <div class="siimple-content siimple-content--small">
         <center>
         <img alt="Vue logo" src="./assets/logo.png">
@@ -7,6 +8,11 @@
         <TodoList />
 
     </div>
+
+    <div class="siimple-footer" align="center">
+        Por Andrés - <a href="https://github.com/Andres-UA/Vue-Todo">GitHub</a>
+    </div>
+</div>
 </template>
 
 <script>
